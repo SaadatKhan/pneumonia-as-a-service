@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image for Pneumonia Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center; /* Center align container contents */
+        }
+        h2 {
+            color: #333;
+        }
+        .custom-file-upload {
+            margin: 20px 5px; /* Adjusted for consistent spacing */
+            display: inline-block; /* Display inline-block for side-by-side positioning */
+        }
+        .custom-file-upload input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload label, input[type=submit] {
+            font-family: Arial, sans-serif; /* Ensure font family consistency */
+            font-size: 16px; /* Specify font size */
+            width: 180px; /* Specify the same width */
+            height: 40px; /* Specify the same height */
+            line-height: 40px; /* Center text vertically */
+            display: inline-block; /* Align submit button inline with the file upload button */
+            text-align: center; /* Center button text */
+            padding: 0; /* Remove padding to use line-height for vertical centering */
+            margin: 0 5px; /* Consistent margin for spacing */
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            vertical-align: middle; /* Align buttons vertically */
+        }
+        .custom-file-upload label:hover, input[type=submit]:hover {
+            background-color: #004494;
+        }
+        .file-name {
+            display: block; /* Ensure the file name is displayed in a new line */
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Chest X-Ray Image</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="button-container"> <!-- Additional container for buttons -->
+                <div class="custom-file-upload">
+                    <input type="file" name="file" id="file" onchange="showFileName()">
+                    <label for="file">Choose Image</label>
+                </div>
+                <input type="submit" value="Upload Image" name="submit">
+                <div id="file-name" class="file-name">No file chosen</div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showFileName() {
+            var fileInput = document.getElementById('file');
+            var fileNameDisplay = document.getElementById('file-name');
+            fileNameDisplay.textContent = fileInput.files.length ? fileInput.files[0].name : 'No file chosen';
+        }
+    </script>
+</body>
+</html>
