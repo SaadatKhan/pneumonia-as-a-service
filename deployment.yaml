@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pneumonia-project-deployment
+  labels:
+    app: pneumonia-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pneumonia-project
+  template:
+    metadata:
+      labels:
+        app: pneumonia-project
+    spec:
+      containers:
+      - name: pneumonia-project-container
+        image: saadatkhan/pneumonia-project
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
