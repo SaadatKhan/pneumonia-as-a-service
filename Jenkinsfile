@@ -36,7 +36,8 @@ pipeline {
                     // Replace the image in the Kubernetes deployment with the new version
                     withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
                         sh """
-                           kubectl set image deployment/pneumonia-project container-0=${DOCKER_IMAGE}:${VERSION} --record
+                           kubectl set image deployment/pneumonia-project-deployment pneumonia-project-container=${DOCKER_IMAGE}:${VERSION}
+
                            """
                     }
                 }
