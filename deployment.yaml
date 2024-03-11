@@ -15,8 +15,8 @@ spec:
         app: pneumonia-project
     spec:
       containers:
-      - name: pneumonia-project-container
-        image: saadatkhan/pneumonia-project
+      - name: pneumonia-container
+        image: saadatkhan/pneumonia-service # Replace with your actual image
         ports:
         - containerPort: 80
-      restartPolicy: Always
+        
