@@ -44,3 +44,6 @@ Pneumonia-as-a-Service is an innovative web-based application designed to levera
    
 ## Jenkins Pipeline Progress
 ![Jenkins Build Progress](/jenkins.png "Jenkins Build Progress")
+
+## Kubernetes Cluster in Rancher
+![Kubernetes Cluster](/cluster.png "Kubernetes Cluster in Rancher")
