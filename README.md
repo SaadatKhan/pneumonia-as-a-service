@@ -27,11 +27,13 @@ Pneumonia-as-a-Service is an innovative web-based application designed to levera
    ```sh
    git clone https://github.com/yourusername/pneumonia-as-a-service.git
 2. **Build the Docker Image**
+   ```sh
    docker build -t pneumonia-as-a-service .
-3. **Run the Docker Container on container port 80**
+4. **Run the Docker Container on container port 80**
+   ```sh
    docker run -p 5000:80 pneumonia-as-a-service
 
-4. **Deployment to Kubernetes**
+6. **Deployment to Kubernetes**
    Make your kuberentes cluster wherever you find convenient and deploy the service.yaml and deployment.yaml and then:
    ```sh
      kubectl apply -f k8s/deployment.yaml
