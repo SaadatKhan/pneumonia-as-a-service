@@ -41,3 +41,6 @@ Pneumonia-as-a-Service is an innovative web-based application designed to levera
    To use Pneumonia-as-a-Service, simply navigate to the deployed application's URL, upload a chest X-ray image through the web interface, and submit it. The system will analyze the image and display whether signs of pneumonia are detected.
 ### Contributing
    Contributions to Pneumonia-as-a-Service are welcome! If you have suggestions for improvements or new features, feel free to fork the repository, make your changes, and submit a pull request.
+   
+## Jenkins Pipeline Progress
+![Jenkins Build Progress](/jenkins.png "Jenkins Build Progress")
