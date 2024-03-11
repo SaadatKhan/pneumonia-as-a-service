@@ -4,6 +4,9 @@ FROM python:3.8-slim
 # Set the working directory in the container
 WORKDIR /app
 
+# Create the uploads directory and set permissions
+RUN mkdir /app/uploads && chmod 777 /app/uploads
+
 # Copy the current directory contents into the container at /app
 COPY . /app
 
@@ -11,7 +14,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
-EXPOSE 8000
+EXPOSE 80
 
 # Define environment variable
 ENV NAME World
