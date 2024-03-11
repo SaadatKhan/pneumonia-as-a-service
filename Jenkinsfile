@@ -9,6 +9,18 @@ pipeline {
     }
 
     stages {
+        stage('Cleanup Docker') {
+            steps {
+                script {
+                    // Stop all running containers
+                    sh 'docker stop $(docker ps -aq)'
+                    // Remove all containers
+                    sh 'docker rm $(docker ps -aq)'
+                    // Optionally, clean up unused images and networks
+                    // sh 'docker system prune -af'
+                }
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
