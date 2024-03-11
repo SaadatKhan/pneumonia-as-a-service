@@ -28,13 +28,14 @@ Pneumonia-as-a-Service is an innovative web-based application designed to levera
    git clone https://github.com/yourusername/pneumonia-as-a-service.git
 2. **Build the Docker Image**
    docker build -t pneumonia-as-a-service .
-3. **Run the Docker Container**
-   docker run -p 5000:5000 pneumonia-as-a-service
+3. **Run the Docker Container on container port 80**
+   docker run -p 5000:80 pneumonia-as-a-service
 
 4. **Deployment to Kubernetes**
    Make your kuberentes cluster wherever you find convenient and deploy the service.yaml and deployment.yaml and then:
    ```sh
      kubectl apply -f k8s/deployment.yaml
+     kubectl apply -f service.yaml
 
 
 ### Usage
@@ -47,3 +48,6 @@ Pneumonia-as-a-Service is an innovative web-based application designed to levera
 
 ## Kubernetes Cluster in Rancher
 ![Kubernetes Cluster](/clusters.png "Kubernetes Cluster in Rancher")
+
+
+**I utilized EC2 instances within my university's AWS Learners' Lab to host all of these components. Due to several restrictions associated with the learners' account, it's likely that the URLs to my EC2 instances are no longer active. As a result, I am unable to provide URLs to my application. Instead, I am including all the essential files needed to replicate the setup. Attached screenshots serve as a visual guide to what you can expect if you successfully recreate a pipeline similar to mine.**
